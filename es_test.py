@@ -17,7 +17,7 @@ res = es.index(index="test-index", doc_type='tweet', id=2, body=doc)
 
 print res
 
-res = es.get(index="test-index", doc_type='tweet', id=1)
+res = es.get(index="test-index", doc_type='tweet', id=2)
 
 print(res['_source'])
 
