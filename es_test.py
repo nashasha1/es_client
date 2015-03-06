@@ -7,15 +7,15 @@ es_server = host + ":" + port
 print "connect: ", es_server
 es = Elasticsearch([es_server])
 
-doc = {
-    'author': 'xdzhang1',
-    'text': 'this is for xdzhang test elasticsearch1.',
-    'timestamp': datetime(2010, 10, 10, 10, 10, 10)
-}
-
-res = es.index(index="test-index", doc_type='tweet', id=2, body=doc)
-
-print res
+# doc = {
+#     'author': 'xdzhang1',
+#     'text': 'this is for xdzhang test elasticsearch1.',
+#     'timestamp': datetime(2010, 10, 10, 10, 10, 10)
+# }
+# 
+# res = es.index(index="test-index", doc_type='tweet', id=2, body=doc)
+# 
+# print res
 
 res = es.get(index="test-index", doc_type='tweet', id=2)
 
