@@ -1,7 +1,11 @@
 from datetime import datetime
 from elasticsearch import Elasticsearch
-
-es = Elasticsearch(['http://127.0.0.1:9200'])
+import os
+host=os.getenv('ES_HOST','http://127.0.0.1')
+port=os.getenv('ES_PORT','9200')
+es_server = host + ":" + port
+print "connect: ", es_server
+es = Elasticsearch([es_server])
 
 doc = {
     'author': 'xdzhang1',
